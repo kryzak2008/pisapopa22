@@ -373,22 +373,22 @@ body #app .hud-radmir-info { display: none; }
     height: 1.7vh;
 }
 .Old-Fixed-Wanted {
-    position: relative;
-    margin-right: 4.5vh;       /* было 6vh */
-    margin-top: -1.2vh;        /* было -1.6vh */
+   position: relative;
+   transform: translateX(-7.2vh);
+   margin-top: -0.4vh; /* Ещё более сильное смещение вниз */
 }
 
 .Old-Fixed-Wanted_back {
-    position: absolute;
-    right: -0.9vh;             /* было -1.2vh */
-    top: -0.5vh;               /* было -0.66vh */
-    z-index: -1;
+   position: absolute;
+   right: -0.5vh;
+   top: 0.2vh;
+   z-index: -1;
 }
 
 .Wanted_row img {
-    width: 2.5vh;              /* было 3.3vh */
-    height: 2.5vh;             /* было 3.3vh */
-    padding: 0.14vh 0.21vh;    /* было 0.19vh 0.28vh */
+   width: 2.1vh;
+   height: 2.1vh;
+   padding: 0.01vh 0.1vh;
 }
 .Old-Fixed-HudBottom {
     transform-origin: right bottom;
@@ -398,17 +398,17 @@ body #app .hud-radmir-info { display: none; }
 }
 
 .Old-Fixed-Freeze {
-    position: absolute;
-    background: hsl(190deg 63% 66% / 40%);
-    width: 26.1111vh;
-    height: 0.65vh;
-    border-radius: 1vh;
-    outline: hsl(0deg 0% 0% / 20%) 0.2vh solid;
-    outline-offset: 0.1vh;
-    overflow: hidden;
-    left: 11.1620vh;
-    bottom: 2.7778vh;
-}
+        position: absolute;
+        background: hsl(190deg 63% 66% / 40%);
+        width: 26.1111vh;
+        height: 0.65vh;
+        border-radius: 1vh;
+        outline: hsl(0deg 0% 0% / 20%) 0.2vh solid;
+        outline-offset: 0.1vh;
+        overflow: hidden;
+        left: 11.1620vh;
+        bottom: 2.7778vh;
+      }
     //RADAR//
     #app .hud-radmir-radar__map { width: 26.3vh !important; height: 16.9vh !important; overflow: hidden; display: flex; justify-content: center; align-items: center; border-radius: 100%; border: none } body #app .hud-radmir-radar__map { transition: .3s } #app .hud-hassle-map { width: 32vh !important; height: 32vh !important } #app .hud-radmir-radar__radar { width: 26.3vh } #app .hud-radmir-radar { left: 7.3vh; bottom: 4.03vh }
     
