@@ -374,19 +374,21 @@ body #app .hud-radmir-info { display: none; }
 }
 .Old-Fixed-Wanted {
     position: relative;
-    margin-right: 6vh;
-    margin-top: -1.6vh;
+    margin-right: 4.5vh;       /* было 6vh */
+    margin-top: -1.2vh;        /* было -1.6vh */
 }
+
 .Old-Fixed-Wanted_back {
     position: absolute;
-    right: -1.2vh;
-    top: -.66vh;
+    right: -0.9vh;             /* было -1.2vh */
+    top: -0.5vh;               /* было -0.66vh */
     z-index: -1;
 }
+
 .Wanted_row img {
-    width: 3.3vh;
-    height: 3.3vh;
-    padding: .19vh .28vh;
+    width: 2.5vh;              /* было 3.3vh */
+    height: 2.5vh;             /* было 3.3vh */
+    padding: 0.14vh 0.21vh;    /* было 0.19vh 0.28vh */
 }
 .Old-Fixed-HudBottom {
     transform-origin: right bottom;
