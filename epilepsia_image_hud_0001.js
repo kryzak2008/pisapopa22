@@ -392,30 +392,31 @@ function AddHud() {
       }
         ///*RADAR*///
       #app .hud-radmir-radar__map { 
-  width: 21.9vh !important; 
-  height: 20.9vh !important; 
-  overflow: hidden; 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  border-radius: 0; 
-  border: none !important;
-  box-shadow: 0 5px 25px rgba(139, 195, 221, 0.81); /* Ледяная тень */
-}
+    width: 34.19vh !important; 
+    height: 21.97vh !important; 
+    overflow: hidden; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 100%; 
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1); /* Добавлена тень */
+} 
 body #app .hud-radmir-radar__map { 
-  transition: .3s 
-}
+    transition: .3s 
+} 
 #app .hud-hassle-map { 
-  width: 32vh !important; 
-  height: 32vh !important 
-}
+    width: 41.6vh !important; 
+    height: 41.6vh !important;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7); /* Дополнительная тень для hassle-map */
+} 
 #app .hud-radmir-radar__radar { 
-  width: 26.3vh; 
-  border-radius: 0;
-  box-shadow: none;
-}
+    width: 34.19vh 
+} 
 #app .hud-radmir-radar { 
-  left: 7.2vh 
+    left: 9.49vh; 
+    bottom: 5.239vh;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Дополнительная тень для радара */
 }
       body .OLD-RADMIR-logo__bonus {
     background: #000000c5
