@@ -297,7 +297,7 @@ body #app .hud-radmir-info { display: none; }
     margin-left: 1.45vh;
 }
 .Old-Fixed-Param.armour, .Old-Param-Values {
-    margin-left: 1vh;
+    margin-left: 1.2vh;
 }
 .Old-Param-Progress, .Old-Progress__Values {
     width: 9.40vh;
