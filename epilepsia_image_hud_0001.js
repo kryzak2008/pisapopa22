@@ -346,8 +346,8 @@ body #app .hud-radmir-info { display: none; }
     box-shadow: #ed2e2e80 0 0 .46vh 0;
 }
 .Old-Fixed-Param.armour .Old-Progress__Values {
-    background-color: #526ee6;
-    box-shadow: #526ee680 0 0 .46vh 0;
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: rgba(82, 109, 230, 0) 0 0 .46vh 0;
 }
 .Old-Fixed-Param.hunger .Old-Progress__Values {
     width: 50%;
