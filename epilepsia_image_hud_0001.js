@@ -1,7 +1,56 @@
 function AddHud() {
     let hudStyleElement;
     let loadingNotification;
-    window.epilepsialoader = window.epilepsialoader || {};
+
+    function showLoadingNotification() {
+        if (document.getElementById('loadingNotification')) return;
+        loadingNotification = document.createElement('div');
+        loadingNotification.id = 'loadingNotification';
+        loadingNotification.style.position = 'fixed';
+        loadingNotification.style.bottom = '10%';
+        loadingNotification.style.left = '50%';
+        loadingNotification.style.transform = 'translateX(-50%)';
+        loadingNotification.style.display = 'none'; /* Скрыто */
+        // loadingNotification.style.display = 'flex'; // Закомментировано
+        loadingNotification.style.alignItems = 'center';
+        loadingNotification.style.padding = '10px 20px';
+        loadingNotification.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+        loadingNotification.style.color = '#fff';
+        loadingNotification.style.fontFamily = 'Arial, sans-serif';
+        loadingNotification.style.fontSize = '16px';
+        loadingNotification.style.borderRadius = '8px';
+        loadingNotification.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
+        loadingNotification.style.opacity = '0';
+        loadingNotification.style.transition = 'opacity 2.5s';
+        loadingNotification.style.zIndex = '1000';
+        const spinner = document.createElement('div');
+        spinner.style.width = '20px';
+        spinner.style.height = '20px';
+        spinner.style.border = '3px solid rgba(255, 255, 255, 0.3)';
+        spinner.style.borderTop = '3px solid #fff';
+        spinner.style.borderRadius = '50%';
+        spinner.style.marginRight = '10px';
+        spinner.style.animation = 'spin 1s linear infinite';
+        const text = document.createElement('span');
+        text.textContent = 'https://t.me/epilepsiawork';
+        loadingNotification.appendChild(spinner);
+        loadingNotification.appendChild(text);
+        document.body.appendChild(loadingNotification);
+        const loadingStyle = document.createElement('style');
+        loadingStyle.textContent = `
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(loadingStyle);
+        // setTimeout(() => {
+        //     loadingNotification.style.opacity = '1';
+        // }, 10);
+    }
+    showLoadingNotification(); // Уведомление создано, но скрыто
+
+    window.mazzx = window.mazzx || {};
 
     function formatNumberWithDots(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -23,26 +72,27 @@ function AddHud() {
             document.body.appendChild(notificationContainer);
         }
     }
-    mazzx.addLabel = function () {
+    mazzx.addLabel = function (message) {
         createContainer();
         const notification = document.createElement('div');
         notification.className = 'mazzx-notification';
         notification.style.position = 'relative';
         notification.style.padding = '10px 20px';
         notification.style.marginBottom = '10px';
-        notification.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-        notification.style.color = 'rgba(255, 255, 255, 0)';
+        notification.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+        notification.style.color = '#fff';
         notification.style.fontFamily = 'Arial, sans-serif';
         notification.style.fontSize = '16px';
         notification.style.borderRadius = '8px';
-        notification.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0)';
-        notification.style.opacity = '0';
+        notification.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
+        notification.style.opacity = '0'; // Оставлено 0, чтобы не появлялись
         notification.style.transition = 'opacity 2.5s';
-        notification.style.display = 'flex';
+        notification.style.display = 'none'; /* Скрыто */
+        // notification.style.display = 'flex'; // Закомментировано
         notification.style.justifyContent = 'center';
         notification.style.alignItems = 'center';
         const icon = document.createElement('img');
-        icon.src = '';
+        icon.src = 'https://i.imgur.com/rBjM3OW.png';
         icon.style.width = '20px';
         icon.style.height = '20px';
         icon.style.marginRight = '10px';
@@ -51,11 +101,11 @@ function AddHud() {
         notification.appendChild(icon);
         notification.appendChild(text);
         notificationContainer.appendChild(notification);
+        // setTimeout(() => {
+        //     notification.style.opacity = '1';
+        // }, 10);
         setTimeout(() => {
-            notification.style.opacity = '1';
-        }, 10);
-        setTimeout(() => {
-            notification.style.opacity = '0';
+            // notification.style.opacity = '0';
             setTimeout(() => {
                 if (notification) notification.remove();
                 if (notificationContainer && notificationContainer.children.length === 0) {
@@ -65,7 +115,7 @@ function AddHud() {
             }, 2500);
         }, 6000);
     };
-    // НАЧАЛЬНОЕ УВЕДОМЛЕНИЕ УБРАНО: mazzx.addLabel("");
+    mazzx.addLabel(""); // Создаётся, но не отображается
 
     const hudScript = document.currentScript;
     const hudElements = [];
