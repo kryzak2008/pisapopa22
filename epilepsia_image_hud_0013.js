@@ -170,8 +170,8 @@ function AddHud() {
       }
 /* Лого */
       .Old-Fixed-Logo img{
-       width:20.52vh;
-       height:6.2vh;
+       width:26.52vh;
+       height:8.2vh;
        margin-right:2vh
       }
       .Old-Fixed-Bonus{
